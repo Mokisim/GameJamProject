@@ -3,53 +3,45 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class WoofSkill : MonoBehaviour
+public class PlayerWalkingStick : MonoBehaviour
 {
     public event Action<float, float> WaveCreated;
 
-    [SerializeField] private Dog _dog;
-    [SerializeField] private Wave _wavePrefab;
+    [SerializeField] private Player _player;
+    [SerializeField] private PlayerWave _wavePrefab;
     [SerializeField] private int _wavesCount;
     [SerializeField] private float _waveSpeed;
-    [SerializeField] private int _woofCount;
     [SerializeField] private float _waveSize;
     [SerializeField] private float _waveSizeDecrease;
 
     private Coroutine _coroutine;
+    private float _cooldown = 1;
+    private WaitForSeconds _wait;
+    private float _waitTime = 0.5f;
+    private float _nextActionTime;
 
-    private void Start()
+    private void Awake()
     {
-        _coroutine = StartCoroutine(Woof());
+        _wait = new WaitForSeconds(_waitTime);
     }
 
     private void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Mouse0))
+        if (Time.time >= _nextActionTime)
         {
-            if(_woofCount > 0)
-            {
-                _coroutine = StartCoroutine(Woof());
-                _woofCount--;
-            }
-            else
-            {
-                if(_coroutine != null)
-                {
-                    StopCoroutine(_coroutine);
-                }
-
-                Debug.Log("Собачка убежала =(");
-            }
+            _coroutine = StartCoroutine(Knocking());
         }
     }
 
-    private IEnumerator Woof()
+    private IEnumerator Knocking()
     {
+        _nextActionTime = Time.time + _cooldown;
+
         for (int i = 0; i < _wavesCount; i++)
         {
             float newWaveSize = _waveSize - _waveSizeDecrease * i;
 
-            if(i == 0)
+            if (i == 0)
             {
                 CreateSoundWaves(_waveSize, _waveSpeed);
             }
@@ -58,15 +50,13 @@ public class WoofSkill : MonoBehaviour
                 CreateSoundWaves(newWaveSize, _waveSpeed);
             }
 
-            yield return new WaitForSeconds(0.5f);
+            yield return _wait;
         }
-
-        Debug.Log("гав");
     }
 
     private void CreateSoundWaves(float size, float speed)
     {
-        Wave wave = Instantiate(_wavePrefab, transform.position, transform.rotation);
+        PlayerWave wave = Instantiate(_wavePrefab, transform.position, transform.rotation);
         WaveCreated?.Invoke(size, speed);
     }
 }

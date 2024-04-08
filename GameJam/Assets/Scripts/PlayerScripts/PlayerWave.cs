@@ -1,25 +1,30 @@
 using System.Collections;
-using Unity.VisualScripting;
+using System.Collections.Generic;
 using UnityEngine;
 
-public class Wave : MonoBehaviour
+public class PlayerWave : MonoBehaviour
 {
-    private Dog _dog;
+    private Player _player;
     private Coroutine _coroutine;
 
     private void Awake()
     {
-        _dog = FindObjectOfType<Dog>();
+        _player = FindObjectOfType<Player>();
+    }
+
+    private void Update()
+    {
+        transform.position = _player.transform.position;
     }
 
     private void OnEnable()
     {
-        _dog.GetComponent<WoofSkill>().WaveCreated += StartIncreaseSize;
+        _player.GetComponent<PlayerWalkingStick>().WaveCreated += StartIncreaseSize;
     }
 
     private void OnDisable()
     {
-        _dog.GetComponent<WoofSkill>().WaveCreated += StartIncreaseSize;
+        _player.GetComponent<PlayerWalkingStick>().WaveCreated += StartIncreaseSize;
     }
 
     private void StartIncreaseSize(float size, float speed)

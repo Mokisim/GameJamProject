@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 3560867643598264831}
   - component: {fileID: 9209917038104192701}
   m_Layer: 0
-  m_Name: Wave
+  m_Name: DogWave
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
