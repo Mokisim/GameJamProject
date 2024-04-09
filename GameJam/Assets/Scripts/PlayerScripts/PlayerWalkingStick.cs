@@ -13,9 +13,11 @@ public class PlayerWalkingStick : MonoBehaviour
     [SerializeField] private float _waveSpeed;
     [SerializeField] private float _waveSize;
     [SerializeField] private float _waveSizeDecrease;
+    [SerializeField] StickCollisionHandler _stickCollisionHandler;
+    [SerializeField]private bool _hasStick;
 
     private Coroutine _coroutine;
-    private float _cooldown = 1;
+    private float _cooldown = 2;
     private WaitForSeconds _wait;
     private float _waitTime = 0.5f;
     private float _nextActionTime;
@@ -27,9 +29,22 @@ public class PlayerWalkingStick : MonoBehaviour
 
     private void Update()
     {
-        if (Time.time >= _nextActionTime)
+        if (_hasStick == true)
         {
-            _coroutine = StartCoroutine(Knocking());
+            if (Input.GetKeyDown(KeyCode.Mouse0))
+            {
+                if (Time.time >= _nextActionTime)
+                {
+                    _coroutine = StartCoroutine(Knocking());
+                }
+                else
+                {
+                    if (_coroutine != null)
+                    {
+                        StopCoroutine(_coroutine);
+                    }
+                }
+            }
         }
     }
 
@@ -58,5 +73,10 @@ public class PlayerWalkingStick : MonoBehaviour
     {
         PlayerWave wave = Instantiate(_wavePrefab, transform.position, transform.rotation);
         WaveCreated?.Invoke(size, speed);
+    }
+
+    private void GetStick(bool hasStick)
+    {
+        _hasStick = hasStick;
     }
 }

@@ -2,14 +2,18 @@ using System.Collections;
 using Unity.VisualScripting;
 using UnityEngine;
 
+[RequireComponent(typeof(SpriteRenderer))]
 public class DogsWave : MonoBehaviour
 {
     private Dog _dog;
     private Coroutine _coroutine;
+    private float _changeColorSpeed = 0.1f;
+    private SpriteRenderer _spriteRenderer;
 
     private void Awake()
     {
         _dog = FindObjectOfType<Dog>();
+        _spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
     private void OnEnable()
@@ -38,7 +42,8 @@ public class DogsWave : MonoBehaviour
             targetSize = Mathf.Sqrt((Mathf.Pow(size, 2) + Mathf.Pow(size, 2) + Mathf.Pow(1, 2)));
 
             transform.localScale = Vector3.MoveTowards(transform.localScale, new Vector3(size, size, 1), speed * Time.deltaTime);
-            //transform.localScale = new Vector3(transform.localScale.x + speed * Time.deltaTime, transform.localScale.y + speed * Time.deltaTime, 1);
+
+            _spriteRenderer.color = new Color(_spriteRenderer.color.r, _spriteRenderer.color.g, _spriteRenderer.color.b, _spriteRenderer.color.a - _changeColorSpeed * Time.deltaTime);
 
             yield return new WaitForSeconds(0.001f);
         }

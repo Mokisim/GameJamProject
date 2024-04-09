@@ -18,7 +18,7 @@ public class WoofSkill : MonoBehaviour
     private Coroutine _coroutine;
     private WaitForSeconds _wait;
     private float _waitTime = 0.5f;
-    private float _cooldown = 1;
+    private float _cooldown = 6;
     private float _nextActionTime;
 
     private void Start()
@@ -29,7 +29,7 @@ public class WoofSkill : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Mouse0))
+        if (Input.GetKeyDown(KeyCode.Q))
         {
             if (_woofCount > 0 && _nextActionTime <= Time.time)
             {
@@ -42,8 +42,6 @@ public class WoofSkill : MonoBehaviour
                 {
                     StopCoroutine(_coroutine);
                 }
-
-                Debug.Log("Собачка убежала =(");
             }
         }
     }
