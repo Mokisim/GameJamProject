@@ -14,6 +14,7 @@ public class WoofSkill : MonoBehaviour
     [SerializeField] private int _woofCount;
     [SerializeField] private float _waveSize;
     [SerializeField] private float _waveSizeDecrease;
+    [SerializeField] private AudioSource _audioSource;
 
     private Coroutine _coroutine;
     private WaitForSeconds _wait;
@@ -34,6 +35,7 @@ public class WoofSkill : MonoBehaviour
             if (_woofCount > 0 && _nextActionTime <= Time.time)
             {
                 _coroutine = StartCoroutine(Woof());
+                _audioSource.PlayOneShot(_audioSource.clip);
                 _woofCount--;
             }
             else
@@ -49,7 +51,7 @@ public class WoofSkill : MonoBehaviour
     private IEnumerator Woof()
     {
         _nextActionTime = Time.time + _cooldown;
-
+        
         for (int i = 0; i < _wavesCount; i++)
         {
             float newWaveSize = _waveSize - _waveSizeDecrease * i;
