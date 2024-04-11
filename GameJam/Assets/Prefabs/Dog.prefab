@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 8894778571782230520}
   - component: {fileID: 4149943598046515372}
   - component: {fileID: 6303216922559071587}
+  - component: {fileID: 2545261589747368503}
   - component: {fileID: 6291841111957617945}
   - component: {fileID: 4787710463620738159}
   - component: {fileID: 3039225169333669958}
@@ -79,7 +80,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 80a86b4d0d50f2a4cbb504da4f39ad1b, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 0b5f36cc748f2414ea5dfbdb611d6edf, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -148,7 +149,20 @@ MonoBehaviour:
   _woofCount: 4
   _waveSize: 100
   _waveSizeDecrease: 25
-  _audioSource: {fileID: 0}
+  _audioSource: {fileID: 6291841111957617945}
+  _animator: {fileID: 3039225169333669958}
+--- !u!114 &2545261589747368503
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6332549074714025690}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6dcc9336550b5ad4ea0fabb54e641cf1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!82 &6291841111957617945
 AudioSource:
   m_ObjectHideFlags: 0
@@ -159,9 +173,9 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 3c22bc57dda4e1c44873efc7f0094267, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.507
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -274,11 +288,11 @@ CapsuleCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.12339261, y: -0.02351469}
-  m_Size: {x: 1.7925053, y: 0.8589619}
+  m_Offset: {x: -0.1013811, y: -0.023514701}
+  m_Size: {x: 2.344807, y: 0.8589611}
   m_Direction: 1
 --- !u!95 &3039225169333669958
 Animator:

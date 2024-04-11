@@ -1,16 +1,46 @@
-using System;
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class CarSpawner : MonoBehaviour
 {
     [SerializeField] private float _spawnRate;
     [SerializeField] private ObjectPool _pool;
+    [SerializeField] private TrafficLights _trafficLights;
+    [SerializeField] private AudioSource _audioSource;
+
+    private Coroutine _coroutine;
 
     private void Start()
     {
-        StartCoroutine(SpawnCars());
+       _coroutine = StartCoroutine(SpawnCars());
+    }
+
+    private void OnEnable()
+    {
+        _trafficLights.TrafficLightsOff += StopTraffic;
+        _trafficLights.TrafficLightsOn += StartTraffic;
+    }
+
+    private void OnDisable()
+    {
+        _trafficLights.TrafficLightsOff -= StopTraffic;
+        _trafficLights.TrafficLightsOn -= StartTraffic;
+    }
+
+    public void StopTraffic()
+    {
+        _audioSource.Play();
+
+        if(_coroutine != null)
+        {
+            StopCoroutine(_coroutine);
+        }
+    }
+
+    public void StartTraffic()
+    {
+        _audioSource.Stop();
+        _coroutine = StartCoroutine(SpawnCars());
     }
 
     private IEnumerator SpawnCars()

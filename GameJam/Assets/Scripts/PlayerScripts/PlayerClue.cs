@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class PlayerClue : MonoBehaviour
 {
-    [SerializeField] Clue _clue;
+    [SerializeField] private Clue _clue;
+    [SerializeField] private bool _isClue;
 
     private StickCollisionHandler _stick;
 
@@ -15,19 +16,28 @@ public class PlayerClue : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Mouse0))
+        if (_isClue == true)
         {
-            _clue.Close();
+            if (Input.GetKeyDown(KeyCode.Mouse0))
+            {
+                _clue.Close();
+            }
         }
     }
 
     private void OnEnable()
     {
-        _stick.StickGetted += _clue.Open;
+        if (_isClue == true)
+        {
+            _stick.StickGetted += _clue.Open;
+        }
     }
 
     private void OnDisable()
     {
-        _stick.StickGetted -= _clue.Open;
+        if (_isClue == true)
+        {
+            _stick.StickGetted -= _clue.Open;
+        }
     }
 }

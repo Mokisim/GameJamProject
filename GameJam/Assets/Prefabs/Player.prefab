@@ -150,6 +150,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _player: {fileID: 7733211498380498424}
   _wavePrefab: {fileID: 2009252602213989674, guid: fb5a0f6ffe148594b939d45927e161ec, type: 3}
+  _audioSource: {fileID: 0}
   _wavesCount: 1
   _waveSpeed: 3
   _waveSize: 2
@@ -258,7 +259,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 134497f60fe4d0442ba50780f8ec46f5, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.2
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -353,8 +354,8 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: e40bddac758721a44ba3404af8d16951, type: 3}
-  m_PlayOnAwake: 1
-  m_Volume: 1
+  m_PlayOnAwake: 0
+  m_Volume: 0.2
   m_Pitch: 1
   Loop: 0
   Mute: 0

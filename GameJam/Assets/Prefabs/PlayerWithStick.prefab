@@ -201,6 +201,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _clue: {fileID: 3811159674861279737}
+  _isClue: 1
 --- !u!50 &3679920048215865108
 Rigidbody2D:
   serializedVersion: 4
@@ -275,7 +276,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 134497f60fe4d0442ba50780f8ec46f5, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.43
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -371,7 +372,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: e40bddac758721a44ba3404af8d16951, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.43
   m_Pitch: 1
   Loop: 0
   Mute: 0
