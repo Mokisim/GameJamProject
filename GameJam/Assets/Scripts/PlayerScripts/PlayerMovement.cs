@@ -8,6 +8,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float _speed;
     [SerializeField] Camera _camera;
     [SerializeField] private AudioSource _audioSource;
+    [SerializeField] private AudioSource _audioSource2;
     
     private Rigidbody2D _rb;
     private Vector2 _mousePosition;
@@ -32,16 +33,18 @@ public class PlayerMovement : MonoBehaviour
 
         if(_movement.x != 0 || _movement.y != 0)
         {
-            if(_audioSource.isPlaying == false)
+            if(_audioSource.isPlaying == false && _audioSource2.isPlaying == false)
             {
-                _audioSource.Play();
+                _audioSource.PlayOneShot(_audioSource.clip);
+                _audioSource2.PlayDelayed(0.5f);
             }
         }
         else
         {
-            if (_audioSource.isPlaying == false)
+            if (_audioSource.isPlaying == false && _audioSource2.isPlaying == false)
             {
                 _audioSource.Stop();
+                _audioSource2.Stop();
             }
         }
     }

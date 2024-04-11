@@ -15,6 +15,7 @@ public class WoofSkill : MonoBehaviour
     [SerializeField] private float _waveSize;
     [SerializeField] private float _waveSizeDecrease;
     [SerializeField] private AudioSource _audioSource;
+    [SerializeField] private Animator _animator;
 
     private Coroutine _coroutine;
     private WaitForSeconds _wait;
@@ -26,6 +27,7 @@ public class WoofSkill : MonoBehaviour
     {
         _coroutine = StartCoroutine(Woof());
         _wait = new WaitForSeconds(_waitTime);
+        _animator.SetTrigger("Bark");
     }
 
     private void Update()
@@ -36,6 +38,7 @@ public class WoofSkill : MonoBehaviour
             {
                 _coroutine = StartCoroutine(Woof());
                 _audioSource.PlayOneShot(_audioSource.clip);
+                _animator.SetTrigger("Bark");
                 _woofCount--;
             }
             else
@@ -43,6 +46,7 @@ public class WoofSkill : MonoBehaviour
                 if (_coroutine != null)
                 {
                     StopCoroutine(_coroutine);
+                    _animator.StopPlayback();
                 }
             }
         }

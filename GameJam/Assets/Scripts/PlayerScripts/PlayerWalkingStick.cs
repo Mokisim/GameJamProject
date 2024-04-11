@@ -9,6 +9,7 @@ public class PlayerWalkingStick : MonoBehaviour
 
     [SerializeField] private Player _player;
     [SerializeField] private PlayerWave _wavePrefab;
+    [SerializeField] private AudioSource _audioSource;
     [SerializeField] private int _wavesCount;
     [SerializeField] private float _waveSpeed;
     [SerializeField] private float _waveSize;
@@ -36,6 +37,7 @@ public class PlayerWalkingStick : MonoBehaviour
                 if (Time.time >= _nextActionTime)
                 {
                     _coroutine = StartCoroutine(Knocking());
+                    _audioSource.PlayOneShot(_audioSource.clip);
                 }
                 else
                 {

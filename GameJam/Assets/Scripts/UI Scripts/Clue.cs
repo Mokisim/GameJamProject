@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class EButton : MonoBehaviour
+public class Clue : MonoBehaviour
 {
     [SerializeField] Image _imageButton;
 

@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 6303216922559071587}
   - component: {fileID: 6291841111957617945}
   - component: {fileID: 4787710463620738159}
+  - component: {fileID: 3039225169333669958}
   m_Layer: 0
   m_Name: Dog
   m_TagString: Untagged
@@ -147,6 +148,7 @@ MonoBehaviour:
   _woofCount: 4
   _waveSize: 100
   _waveSizeDecrease: 25
+  _audioSource: {fileID: 0}
 --- !u!82 &6291841111957617945
 AudioSource:
   m_ObjectHideFlags: 0
@@ -275,6 +277,27 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.038362753, y: 0.067098536}
-  m_Size: {x: 1.3779882, y: 0.67772007}
+  m_Offset: {x: 0.12339261, y: -0.02351469}
+  m_Size: {x: 1.7925053, y: 0.8589619}
   m_Direction: 1
+--- !u!95 &3039225169333669958
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6332549074714025690}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 54c15ac43bd0be644aaf0eef313b72a5, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
