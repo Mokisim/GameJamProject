@@ -9,6 +9,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] Camera _camera;
     [SerializeField] private AudioSource _audioSource;
     [SerializeField] private AudioSource _audioSource2;
+    [SerializeField] private Animator _animator;
     
     private Rigidbody2D _rb;
     private Vector2 _mousePosition;
@@ -35,6 +36,11 @@ public class PlayerMovement : MonoBehaviour
         {
             if(_audioSource.isPlaying == false && _audioSource2.isPlaying == false)
             {
+                if (_animator != null)
+                {
+                    _animator.SetBool("IsWalk", true);
+                }
+
                 _audioSource.PlayOneShot(_audioSource.clip);
                 _audioSource2.PlayDelayed(0.5f);
             }
@@ -43,6 +49,11 @@ public class PlayerMovement : MonoBehaviour
         {
             if (_audioSource.isPlaying == false && _audioSource2.isPlaying == false)
             {
+                if (_animator != null)
+                {
+                    _animator.SetBool("IsWalk", false);
+                }
+
                 _audioSource.Stop();
                 _audioSource2.Stop();
             }

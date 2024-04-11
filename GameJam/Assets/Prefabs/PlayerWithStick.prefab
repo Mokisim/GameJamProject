@@ -26,7 +26,7 @@ Transform:
   m_GameObject: {fileID: 712663572083035857}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.84, y: 0.89, z: 0}
+  m_LocalPosition: {x: 1.19, y: -0.075, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -63,6 +63,7 @@ GameObject:
   - component: {fileID: 4432159808402145362}
   - component: {fileID: 508933981493035791}
   - component: {fileID: 6686703618476863354}
+  - component: {fileID: 4024173606485161055}
   m_Layer: 0
   m_Name: PlayerWithStick
   m_TagString: Untagged
@@ -155,8 +156,8 @@ MonoBehaviour:
   _wavePrefab: {fileID: 2009252602213989674, guid: fb5a0f6ffe148594b939d45927e161ec, type: 3}
   _audioSource: {fileID: 6686703618476863354}
   _wavesCount: 1
-  _waveSpeed: 3
-  _waveSize: 2
+  _waveSpeed: 4
+  _waveSize: 6
   _waveSizeDecrease: 0
   _stickCollisionHandler: {fileID: 0}
   _hasStick: 1
@@ -552,6 +553,27 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!95 &4024173606485161055
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1651183826532154292}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 20a22658462e72e4e8dd0518fa75210c, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &3871563225515081986
 GameObject:
   m_ObjectHideFlags: 0
