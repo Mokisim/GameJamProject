@@ -6,11 +6,12 @@ using UnityEngine.SceneManagement;
 public class MenuButtons : MonoBehaviour
 {
     [SerializeField] private Authors _authors;
+    [SerializeField] private Tutorial _tutorial;
     [SerializeField] private CurrentCamera _currentCamera;
 
     public void Play()
     {
-        SceneManager.LoadScene(1);
+        _tutorial.OpenTutorial();
     }
 
     public void OpenAuthors()

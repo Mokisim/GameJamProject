@@ -41,14 +41,6 @@ public class WoofSkill : MonoBehaviour
                 _animator.SetTrigger("Bark");
                 _woofCount--;
             }
-            else
-            {
-                if (_coroutine != null)
-                {
-                    StopCoroutine(_coroutine);
-                    _animator.StopPlayback();
-                }
-            }
         }
     }
 
