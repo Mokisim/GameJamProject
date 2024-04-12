@@ -24,6 +24,9 @@ EditorBuildSettings:
     path: Assets/Scenes/MetroLevel.unity
     guid: d6b8af3d5e6dd2b41b82b24e53bf6cb7
   - enabled: 1
+    path: Assets/Scenes/Park.unity
+    guid: 791365809707b414eb91933723674d21
+  - enabled: 1
     path: Assets/Scenes/Titles.unity
     guid: 019dd6e94c00774459e4fd2ddc14508d
   m_configObjects: {}

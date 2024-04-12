@@ -36,14 +36,6 @@ public class Car : MonoBehaviour
         _trafficLights.TrafficLightsOn -= StopRide;
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if(collision.TryGetComponent<Player>(out Player player) == true)
-        {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-        }
-    }
-
     private void StopRide()
     {
         _canRide = false;
