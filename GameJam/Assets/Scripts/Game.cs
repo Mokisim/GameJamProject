@@ -1,17 +1,22 @@
+using System;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class Game : MonoBehaviour
 {
-    [SerializeField] private int _nextScene;
+    [SerializeField] private Player _player;
+    [SerializeField] private DeathScreen _deathScreen;
+    [SerializeField] private int _scene;
 
-    public void SetActive()
+    public void CastGameOver()
     {
-        this.gameObject.SetActive(true);
+        Time.timeScale = 0f;
+        _deathScreen.Open();
     }
 
-    private void OpenNextLevel()
+    public void LoadNewLevel()
     {
-        SceneManager.LoadScene(_nextScene);
+        SceneManager.LoadScene(_scene);
     }
 }

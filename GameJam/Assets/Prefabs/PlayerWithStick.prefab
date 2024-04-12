@@ -58,6 +58,7 @@ GameObject:
   - component: {fileID: 7733211498380498424}
   - component: {fileID: 2416537469779949321}
   - component: {fileID: 2610656688880554616}
+  - component: {fileID: 8446604824576879424}
   - component: {fileID: 3679920048215865108}
   - component: {fileID: 7893731804429515884}
   - component: {fileID: 4432159808402145362}
@@ -189,6 +190,7 @@ MonoBehaviour:
   _camera: {fileID: 0}
   _audioSource: {fileID: 4432159808402145362}
   _audioSource2: {fileID: 508933981493035791}
+  _animator: {fileID: 0}
 --- !u!114 &2610656688880554616
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -203,6 +205,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _clue: {fileID: 3811159674861279737}
   _isClue: 1
+--- !u!114 &8446604824576879424
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1651183826532154292}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 57a4cf591233e9848a5d907f773d6d4c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!50 &3679920048215865108
 Rigidbody2D:
   serializedVersion: 4
