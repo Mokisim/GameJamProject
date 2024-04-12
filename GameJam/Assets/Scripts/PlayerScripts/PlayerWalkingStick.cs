@@ -18,7 +18,7 @@ public class PlayerWalkingStick : MonoBehaviour
     [SerializeField]private bool _hasStick;
 
     private Coroutine _coroutine;
-    private float _cooldown = 2;
+    private float _cooldown = 1;
     private WaitForSeconds _wait;
     private float _waitTime = 0.5f;
     private float _nextActionTime;
